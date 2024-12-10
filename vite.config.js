@@ -3,6 +3,7 @@ import vue from "@vitejs/plugin-vue";
 import { federation } from "@module-federation/vite";
 
 export default defineConfig({
+  base: "https://vue-remote-app.pages.dev",
   plugins: [
     federation({
       name: "d42RemoteApp",
