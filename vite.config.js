@@ -9,7 +9,7 @@ export default defineConfig({
       manifest: true,
       filename: "remoteEntry.js",
       exposes: {
-        "./d42RemoteApp": "./src/remote-entry.js",
+        "./d42RemoteApp": "./src/App.vue",
       },
     }),
     vue(),
