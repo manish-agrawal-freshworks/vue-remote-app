@@ -16,7 +16,7 @@ export default defineConfig({
       manifest: true,
       filename: "remoteEntry.js",
       exposes: {
-        "./d42RemoteApp": "./src/App.vue",
+        "./d42RemoteApp": "./src/remoteentry.js",
       }
     }),
     vue(),

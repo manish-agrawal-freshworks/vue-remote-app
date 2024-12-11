@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="loading" class="shimmer-wrapper">
-      <a-skeleton
+      <Skeleton
         active
         :paragraph="{ rows: 15 }"
         class="p-8"
@@ -11,7 +11,7 @@
           height: calc(100vh - 65px);
         "
       />
-      <a-skeleton
+      <Skeleton
         :paragraph="{
           rows: 10,
           width: [100, 200, 100, 200, 100, 200, 100, 200, 100, 200],
@@ -21,7 +21,7 @@
         style="width: 30%; height: calc(100vh - 65px)"
       />
     </div>
-    <a-table
+    <Table
       v-else
       :columns="columns"
       :data-source="tableData"
@@ -37,8 +37,8 @@ import { Skeleton, Table } from "ant-design-vue";
 export default defineComponent({
   name: "AssetsTable",
   components: {
-    "a-skeleton": Skeleton,
-    "a-table": Table,
+    "Skeleton": Skeleton,
+    "Table": Table,
   },
   setup() {
     const columns = [
