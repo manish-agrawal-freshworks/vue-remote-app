@@ -4,6 +4,12 @@ import { federation } from "@module-federation/vite";
 
 export default defineConfig({
   base: "https://vue-remote-app.pages.dev",
+  server: {
+    port: 5173,
+    cors: true,
+    strictPort: true,
+    host: 'localhost.freshservice-dev.com'
+  },
   plugins: [
     federation({
       name: "d42RemoteApp",

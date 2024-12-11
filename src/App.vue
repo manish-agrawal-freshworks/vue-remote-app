@@ -7,3 +7,10 @@ import Table from "./components/Table.vue";
     <Table />
   </div>
 </template>
+
+export default defineComponent({
+  name: "App",
+  components: {
+    "Table": Table,
+  }
+});
