@@ -17,7 +17,7 @@ export default defineConfig({
       filename: "remoteEntry.js",
       exposes: {
         "./d42RemoteApp": "./src/remote-entry.js",
-        "./d42RemoteAssetsTable": "./src/remote-entry-asset-table.js",
+        "./d42RemoteComponent": "./src/remote-entry-component.js",
       },
     }),
     vue(),
