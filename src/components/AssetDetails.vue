@@ -60,6 +60,8 @@ export default defineComponent({
 
     const refreshData = () => {
       fetchAssetDetails();
+
+      // send message to parent component
       props.messageChannelService.postMessage({
         action: 'Event from VueJs Component',
         payload: { hi: 'hello' },
@@ -68,6 +70,11 @@ export default defineComponent({
 
     onMounted(() => {
       fetchAssetDetails();
+
+      // listen for messages from parent component
+      porps.messageChannelService.onMessage((messageData) => {
+        console.log("Message received in VueJs component:", messageData);
+      });
     });
 
     return {
