@@ -34,7 +34,7 @@ export default defineComponent({
       default: () => ({}), // Default to an empty object
     },
   },
-  setup() {
+  setup(props) {
     const assetData = ref({});
     const loading = ref(true);
 
@@ -60,7 +60,7 @@ export default defineComponent({
 
     const refreshData = () => {
       fetchAssetDetails();
-      this.messageChannelService.postMessage({
+      props.messageChannelService.postMessage({
         action: 'Event from VueJs Component',
         payload: { hi: 'hello' },
       });
