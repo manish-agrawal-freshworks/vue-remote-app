@@ -28,6 +28,12 @@ export default defineComponent({
     Tag,
     Button,
   },
+  props: {
+    messageChannelService: {
+      type: Object,
+      default: () => ({}), // Default to an empty object
+    },
+  },
   setup() {
     const assetData = ref({});
     const loading = ref(true);
@@ -54,6 +60,10 @@ export default defineComponent({
 
     const refreshData = () => {
       fetchAssetDetails();
+      messageChannelService.postMessage({
+        action: 'Event from VueJs Component',
+        payload: { hi: 'hello' },
+      });
     };
 
     onMounted(() => {

@@ -9,7 +9,11 @@ const componentMap = {
 const WrapperComponent = defineComponent({
   props: {
     componentName: String,
-    propsData: Object, // Pass additional props if needed
+    propsData: {  // Pass additional props if needed
+      type: Object,
+      default: () => ({}), // Default to an empty object
+    },
+    
   },
   setup(props) {
     const Component = componentMap[props.componentName];
@@ -18,7 +22,7 @@ const WrapperComponent = defineComponent({
       return () => h("div", {}, `Error: Component "${props.componentName}" not found`);
     }
 
-    return () => h(Component, props.propsData);
+    return () => h(Component, { ...props.propsData });
   },
 });
 
