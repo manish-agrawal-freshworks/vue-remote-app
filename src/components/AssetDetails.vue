@@ -60,7 +60,7 @@ export default defineComponent({
 
     const refreshData = () => {
       fetchAssetDetails();
-      messageChannelService.postMessage({
+      this.messageChannelService.postMessage({
         action: 'Event from VueJs Component',
         payload: { hi: 'hello' },
       });
