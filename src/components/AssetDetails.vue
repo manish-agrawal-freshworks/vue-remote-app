@@ -38,11 +38,6 @@ export default defineComponent({
     const assetData = ref({});
     const loading = ref(true);
 
-    // listen for messages from parent component
-    props.messageChannelService.onMessage((messageData) => {
-      console.log("Message received in VueJs component:", messageData);
-    });
-
     const fetchAssetDetails = async () => {
       loading.value = true;
       try {
@@ -75,6 +70,11 @@ export default defineComponent({
 
     onMounted(() => {
       fetchAssetDetails();
+
+      // listen for messages from parent component
+      props.messageChannelService.onMessage((messageData) => {
+        console.log("Message received in VueJs component:", messageData);
+      });
     });
 
     return {
