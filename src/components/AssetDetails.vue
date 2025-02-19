@@ -8,8 +8,8 @@
         <Tag color="blue">{{ assetData.asset_type || "Unknown" }}</Tag>
       </template>
       <p><strong>Name:</strong> {{ assetData.name || "--" }}</p>
-      <p><strong>Asset Tag:</strong> {{ assetData.asset_tag || "--" }}</p>
-      <p><strong>Usage Type: <i>{{ assetData.usage_type || "--" }}</i></strong></p>
+      <p><strong>Asset Tag: <i>{{ assetData.asset_tag || "--" }}</i></strong></p>
+      <p><strong>Usage Type:</strong> {{ assetData.usage_type || "--" }}</p>
       <p><strong>Location:</strong> {{ assetData.location || "--" }}</p>
       <Button type="primary" @click="refreshData">Refresh</Button>
     </Card>
