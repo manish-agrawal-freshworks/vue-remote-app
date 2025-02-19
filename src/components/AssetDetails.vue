@@ -74,6 +74,10 @@ export default defineComponent({
       // listen for messages from parent component
       props.messageChannelService.onMessage((messageData) => {
         console.log("Message received in VueJs component:", messageData);
+        const { action, payload } = messageData;
+        if (action === 'updateTagName') {
+          assetData.value.asset_tag = payload.tagNameValue;
+        }
       });
     });
 
