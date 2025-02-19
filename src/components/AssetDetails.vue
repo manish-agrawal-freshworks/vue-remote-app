@@ -39,7 +39,7 @@ export default defineComponent({
     const loading = ref(true);
 
     // listen for messages from parent component
-    porps.messageChannelService.onMessage((messageData) => {
+    props.messageChannelService.onMessage((messageData) => {
       console.log("Message received in VueJs component:", messageData);
     });
 
