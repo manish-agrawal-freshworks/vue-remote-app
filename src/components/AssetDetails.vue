@@ -11,7 +11,7 @@
       <p><strong>Asset Tag: <i>{{ assetData.asset_tag || "--" }}</i></strong></p>
       <p><strong>Usage Type:</strong> {{ assetData.usage_type || "--" }}</p>
       <p><strong>Location:</strong> {{ assetData.location || "--" }}</p>
-      <Button type="primary" @click="refreshData">Refresh</Button>
+      <Button type="primary" @click="refreshData">Send Event to Parent</Button>
     </Card>
   </div>
 </template>
@@ -59,7 +59,7 @@ export default defineComponent({
     };
 
     const refreshData = () => {
-      fetchAssetDetails();
+      // fetchAssetDetails();
 
       // send message to parent component
       props.messageChannelService.postMessage({
