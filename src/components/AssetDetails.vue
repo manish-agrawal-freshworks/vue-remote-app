@@ -79,6 +79,12 @@ export default defineComponent({
           assetData.value.asset_tag = payload.tagNameValue;
         }
       });
+
+      // send `onVueComponentMounted` event message to parent component 
+      props.messageChannelService.postMessage({
+        action: 'onVueComponentMounted',
+        payload: {},
+      });
     });
 
     return {
